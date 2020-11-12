@@ -4,4 +4,5 @@ public interface DatabaseGateway {
 
 	Boolean confirmClient(final String cpf, final String productCode, final Long companyCode);
 	
+	
 }
