@@ -1,0 +1,25 @@
+baseurl:
+      v1: /multinational/v1
+
+server:
+  port: 9000
+
+feign:    
+   headoffice:
+      name: headoffice
+      path: /headoffice/v1
+      url: http://localhost:8080
+   
+spring:
+   application:
+      name: multinational
+
+logging:
+   file: multinational.log
+   path: logs 
+
+management:
+   endpoints:
+    web:
+     cors:
+      allowed-origins: "*"

@@ -47,8 +47,14 @@ public class DatabaseGatewayImpl implements DatabaseGateway {
 		companyList.addAll(Arrays.asList(new Company(), new Company(), new Company()));
 		
 		companyList.get(0).setCompanyCode(0L);
+		companyList.get(0).setClientList(new ArrayList<>());
+		companyList.get(0).setProductList(new ArrayList<>());
 		companyList.get(1).setCompanyCode(1L);
+		companyList.get(1).setClientList(new ArrayList<>());
+		companyList.get(1).setProductList(new ArrayList<>());
 		companyList.get(2).setCompanyCode(2L);
+		companyList.get(2).setClientList(new ArrayList<>());
+		companyList.get(2).setProductList(new ArrayList<>());
 		
 		createCompany(companyList.get(0), "000.000.000-00", "Larissa Randow", "0000", "Coraline Funko Pop");
 		createCompany(companyList.get(1), "000.000.000-01", "Vitor Machado", "0001", "EVA-01");
@@ -66,8 +72,6 @@ public class DatabaseGatewayImpl implements DatabaseGateway {
 		client.setName(clientName);
 		
 		company.getClientList().add(client);
-
-		company.setProductList(new ArrayList<>());
 		
 		final Product product = new Product();
 		

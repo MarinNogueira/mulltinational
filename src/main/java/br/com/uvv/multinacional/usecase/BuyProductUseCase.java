@@ -18,7 +18,7 @@ public class BuyProductUseCase {
 	public String buyProduct(final Client client, final Product product, final Long companyCode) {
 		
 		//Código da companhia atual
-		final Long thisCompanyCode = 1L;
+		final Long thisCompanyCode = 0L;
 		
 		//Compara o código enviado com o código acima para se certificar que a multinacional tem acesso ao banco em que o cliente está cadastrado
 		if(companyCode == thisCompanyCode && databaseGateway.confirmClient(client.getCpf(), product.getCode(), companyCode)) {

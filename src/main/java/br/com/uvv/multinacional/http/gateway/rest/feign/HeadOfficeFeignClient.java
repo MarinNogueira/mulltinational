@@ -9,7 +9,7 @@ import br.com.uvv.multinacional.domains.Client;
 import br.com.uvv.multinacional.domains.Product;
 
 @FeignClient
-(name = "headoffice", path = "/buy", url = "http://localhost:8080")
+(name = "${feign.headoffice.name}", path = "${feign.headoffice.path}", url = "${feign.headoffice.url}")
 public interface HeadOfficeFeignClient {
 
 	@GetMapping()
