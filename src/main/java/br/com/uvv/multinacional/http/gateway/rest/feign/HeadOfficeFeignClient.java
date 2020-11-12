@@ -13,8 +13,8 @@ public interface HeadOfficeFeignClient {
 
 	@GetMapping("")
 	String checkWithHeadOffice(
-			final @RequestBody(required = true) Client client, 
-			final @RequestBody(required = true) Product product, 
+			final @RequestBody(required = true) String cpf, 
+			final @RequestBody(required = true) String productCode, 
 			final @RequestBody(required = true) Long companyCode);
 	
 }
