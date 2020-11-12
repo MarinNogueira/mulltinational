@@ -10,9 +10,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Document(collection = "company")
 public class Company {
-	@Id
 	private Long companyCode;
 	private List<Product> productList;
 	private List<Client> clientList;

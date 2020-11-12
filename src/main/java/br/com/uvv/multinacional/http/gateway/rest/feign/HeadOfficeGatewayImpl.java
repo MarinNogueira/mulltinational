@@ -1,10 +1,11 @@
 package br.com.uvv.multinacional.http.gateway.rest.feign;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class HeadOfficeGatewayImpl implements HeadOfficeGateway {
-
+	@Autowired
 	private HeadOfficeFeignClient headOfficeFeignClient;
 	
 	@Override
