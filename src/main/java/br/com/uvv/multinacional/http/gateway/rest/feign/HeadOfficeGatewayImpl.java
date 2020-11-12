@@ -1,13 +1,16 @@
 package br.com.uvv.multinacional.http.gateway.rest.feign;
 
-import br.com.uvv.multinacional.domains.Client;
-import br.com.uvv.multinacional.domains.Product;
+import org.springframework.stereotype.Service;
 
+@Service
 public class HeadOfficeGatewayImpl implements HeadOfficeGateway {
 
+	private HeadOfficeFeignClient headOfficeFeignClient;
+	
 	@Override
-	public String checkWithHeadOffice(final Client client, final Product product, final Long companyCode) {		
-		return null;
+	public String checkWithHeadOffice(final String cpf, final String productCode, final Long companyCode) {		
+		//Utiliza a tecnologia do feign client da netflix pra fazer o requestia via rest
+		return headOfficeFeignClient.checkWithHeadOffice(cpf, productCode, companyCode);
 	}
 
 	

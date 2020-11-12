@@ -4,23 +4,28 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import br.com.uvv.multinacional.domains.Client;
 import br.com.uvv.multinacional.domains.Company;
 import br.com.uvv.multinacional.domains.Product;
 
+@Service
 public class DatabaseGatewayImpl implements DatabaseGateway {
 
 	@Override
 	public Boolean confirmClient(final String cpf, final String productCode, final Long companyCode) {
-
+		//Carrega a lista de companhias em memória
 		final List<Company> companyList = loadCompany();
 		
 		for (Company company : companyList) {
+			//Faz o laço na lista de companhia e compara a companhia encontrada com a companhia recebida
 			if(company.getCompanyCode() == companyCode) {
 			
 				for (Client client : company.getClientList()) {
 					
 					for(Product product : company.getProductList()) {
+						// faz o laço na lista de produto e cliente e caso os produtos e cliente enviado sejam confirmados pelos dados da base retorna verdadeiro
 						if(product.getCode().equals(productCode) && client.getCpf().equals(cpf)) {
 							return true;
 						}
@@ -31,7 +36,7 @@ public class DatabaseGatewayImpl implements DatabaseGateway {
 			}
 			
 		}
-		
+		//Caso nada seja encontrado retorna falso
 		return false;
 	}
 	
@@ -71,7 +76,6 @@ public class DatabaseGatewayImpl implements DatabaseGateway {
 		
 		company.getProductList().add(product);
 		
-		companyList.add(company);
 	}
 
 }
