@@ -18,11 +18,12 @@ public class DatabaseGatewayImpl implements DatabaseGateway {
 	private List<Company> loadCompany(){
 		
 		final List<Company> companyList = new ArrayList<>();
+//		ooafdkodasfkfaofdkaofask
 		
 		createCompany(companyList, "000.000.000-00", "Larissa Randow", "0000", "Coraline Funko Pop");
 		createCompany(companyList, "000.000.000-01", "Vitor Machado", "0001", "EVA-01");
 		createCompany(companyList, "000.000.000-02", "Matheus Nogueira", "0002", "KDA Akali");
-		createCompany(companyList, "000.000.000-03", "Harry Potter", "0003", "Coraline Funko Pop");		
+//		createCompany(companyList, "000.000.000-03", "Harry Potter", "0003", "Coraline Funko Pop");		
 		
 		return companyList;
 	}
