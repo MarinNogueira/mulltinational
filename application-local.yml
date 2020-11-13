@@ -7,7 +7,7 @@ server:
 feign:    
    headoffice:
       name: headoffice
-      path: /headoffice/v1
+      path: /api
       url: http://localhost:8080
    
 spring:

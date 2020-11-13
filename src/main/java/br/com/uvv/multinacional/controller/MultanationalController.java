@@ -46,6 +46,7 @@ public class MultanationalController {
 		final Product product = new Product();
 		
 		product.setCode(companyJson.getProduct().getCode());
+		product.setDescription(companyJson.getProduct().getDescription());
 
 		final Client client = new Client();
 		
